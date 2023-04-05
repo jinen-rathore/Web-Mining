@@ -40,3 +40,10 @@ In addition to identifying key trends and patterns, flight network analysis can 
 
 ### Most number of airports
 ![Most_airports_in](https://user-images.githubusercontent.com/98012427/229417899-891ef3b0-410d-4ffd-8816-ec287e0bbc2c.png)
+
+### Optimal K value for KMeans Clustering
+![optimal k value](https://user-images.githubusercontent.com/98012427/230114739-dc75a09b-040c-4789-bc06-005af061a769.png)
+
+### KMeans clustering 
+![k-means-clustering](https://user-images.githubusercontent.com/98012427/230114939-717cb17d-cf5b-41c7-b165-046eea454947.png)
+
