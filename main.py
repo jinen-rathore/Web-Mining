@@ -28,13 +28,6 @@
 ### 2) What is the biggest (most flightes) airline?
 ### 3) How do airlines differ from each other based on graph metrics?
 
-### Self-defined modules:
-### base_preprocessing
-### module_visualization_worldmap
-### module_settings_airlines_airports
-### module_inspect_data
-### module_comparison_airlines
-
 
 # self-defined modules
 try:
@@ -42,6 +35,7 @@ try:
     import module_visualization_worldmap as worldmap
     import module_inspect_data as inspect
     import module_comparison_airlines as comp_air
+    import module_clustering as clt
 except Exception as err: 
     print("Something went wrong with one of the modules")
     print(err)
@@ -50,9 +44,9 @@ except Exception as err:
 # define filenames of datasets that you want to load
 # in this case a csv with all flight routes, a csv with geographical locations of airports,
 # and a txt file (in csv format) with airline information
-filename_routes = "D:/VIT/SEM6/CSE3024-WEBMINING/Jcomp/Flight-Network-Analysis-master/Dataset/routes.csv"
-filename_airports = "D:/VIT/SEM6/CSE3024-WEBMINING/Jcomp/Flight-Network-Analysis-master/Dataset/airports-extended.csv"
-filename_airlines = "D:/VIT/SEM6/CSE3024-WEBMINING/Jcomp/Flight-Network-Analysis-master/Dataset/airlines.csv"
+filename_routes = "D:/VIT/SEM6/CSE3024-WEBMINING/Jcomp/Flight-Network-Analysis/Dataset/routes.csv"
+filename_airports = "D:/VIT/SEM6/CSE3024-WEBMINING/Jcomp/Flight-Network-Analysis/Dataset/airports-extended.csv"
+filename_airlines = "D:/VIT/SEM6/CSE3024-WEBMINING/Jcomp/Flight-Network-Analysis/Dataset/airlines.csv"
 
 # load flight routes data into dataframe
 try:
@@ -108,8 +102,9 @@ while True:
     1\tInspect the dataframes               
     2\tVisualise flight network with self-chosen parameters.
     3\tCompare airlines.
-    4\tExit program.
-    enter answer (0/1/2/3/4): """)
+    4\tClustering.
+    5\tExit program.
+    enter answer (0/1/2/3/4/5): """)
     
     # evaluate user choice and proceed accordingly
     if choice == "0": # see demo
@@ -135,7 +130,12 @@ while True:
         # start this program in the compare airlines module with the merged dataframe as input
         comp_air.compare_airlines_program(df_merged)
 
-    elif choice == "4": # Exit program 
+    elif choice == "4": # Clustering 
+        
+        # start this program in the compare airlines module with the merged dataframe as input
+        clt.clustering_program(df_merged)
+
+    elif choice == "5": # Exit program 
         print("Thank you for using this program.")
         break 
     
